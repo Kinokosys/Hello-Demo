@@ -19,6 +19,7 @@ class MainController {
     fun myResponseBody (): String {
         return "Hello World du Contrôleur !"
     }*/
+
     @GetMapping("/hello")
     @ResponseBody
     fun querryString (@RequestParam querry: Map<String, String>): String {
@@ -26,6 +27,7 @@ class MainController {
         val prenom = querry["prenom"] ?: ""
         return "Hello ${prenom} ${nom}!"
     }
+
     @GetMapping("/hello-{language}")
     @ResponseBody
     fun findLanguage(@PathVariable("language") language: String, request: HttpServletRequest): String {
